@@ -13,4 +13,4 @@ main: main.o
 	$(CC) -Wall main.o $(LDFLAGS) -o main
 
 clean:
-	rm *.o main hello 
+	-rm *.o main hello

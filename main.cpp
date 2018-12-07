@@ -1,21 +1,23 @@
 // operating with variables
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(int argc, char const *argv[]) {
   // declaring variables:
-  int a, b;
-  int result;
+  string mystr;
 
-  // process:
-  a = 5;
-  b = 2;
-  a = a + 1;
-  result = a - b;
+  cout << "What is your name: ";
+  getline(cin, mystr);
 
   // print out the result
-  cout << result;
+  cout << "Hello " << mystr << ".\n";
+  cout << "What is your favorite team? ";
+  getline(cin, mystr)
+  cout << "I like " << mystr << " too!\n";
+
+  // test getline function
 
   // terminate the program:
   return 0;
