@@ -1,4 +1,4 @@
-a// operating with variables
+// operating with variables
 
 #include <iostream>
 using namespace std;
@@ -57,15 +57,47 @@ int main(int argc, char const *argv[]) {
   int firstvalue = 5, secondvalue = 15;
   int * p1, * p2;
 
-  p1 = &firstvalue;
-  p2 = &secondvalue;
-  *p1 = 10;
-  *p2 = *p1;
-  p1 = p2;
-  *p1 = 20;
+  //Example 1 - Assign a memory location to a pointer
+  p1 = &firstvalue;   // Assign the memory address of the variable firstvalue to p1
+  p2 = &secondvalue;  // Assign the memory address of the variable secondvalue to p2
+  cout << "Example 1 - Assign a memory location to a pointer" << endl;
+  cout << "p1 = " << *p1 << endl;
+  cout << "p2 = " << *p2 << endl;
+  cout << endl;
 
+  //Example 2 - Assign a value to a memory location being pointed at by a pointer
+  *p1 = 10;   // Assign the value 10 to the memory location that p1 is pointing to
+  cout << "Example 2  - Assign a value to a memory location being pointed at by a pointer" << endl;
+  cout << "p1 = " << *p1 << endl;
+  cout << "p2 = " << *p2 << endl;
+  cout << endl;
+
+  //Example 3 - Assign a value being pointed at by a pointer to a memory location pointed to by another pointer
+  *p2 = *p1;  // Assign the value located in the memory spot to which p2 is pointing
+  cout << "Example 3 - Assign a value being pointed at by a pointer to a memory location pointed to by another pointer" << endl;
+  cout << "p1 = " << *p1 << endl;
+  cout << "p2 = " << *p2 << endl;
+  cout << endl;
+
+  //Example 4 - Assign the memory location p2 is pointing at to p1
+  p1 = p2;  //Assign the memory location p2 is pointing at to p1
+  cout << "Example 4 - Assign the memory location p2 is pointing at to p1" << endl;
+  cout << "p1 = " << *p1 << endl;
+  cout << "p2 = " << *p2 << endl;
+  cout << endl;
+
+  //Example 5 - Assing the 20 to the memory location pointed at by p1 (p2 is also pointing to the same location)
+  *p1 = 20; //Assing the 20 to the memory location pointed at by p1 (p2 is also pointing to the same location)
+  cout << "Example 5 - Assing the value 20 to the memory location pointed at by p1 (p2 is also pointing to the same location)" << endl;
+  cout << "p1 = " << *p1 << endl;
+  cout << "p2 = " << *p2 << endl;
+  cout << endl;
+
+  // Example 6 - What happened to firstvalue and secondvalue?
+  cout << "Example 6 - What happened to firstvalue and secondvalue?" << endl;
   cout << "firstvalue is " << firstvalue << endl;
   cout << "secondvalue is " << secondvalue << endl;
+  cout << endl;
 
   return 0;
 }
