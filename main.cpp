@@ -53,8 +53,19 @@ long factorial(long a){
     return(1);
 }
 
+int AddVariable(int *p_fv, int *p_sv){
+  int sum = 0;
+
+  sum = *p_fv + *p_sv;
+
+  *p_fv = 456;
+  *p_sv = 789;
+
+  return sum;
+}
+
 int main(int argc, char const *argv[]) {
-  int firstvalue = 5, secondvalue = 15;
+  int firstvalue = 5, secondvalue = 15, result = 0;
   int * p1, * p2;
 
   //Example 1 - Assign a memory location to a pointer
@@ -64,6 +75,10 @@ int main(int argc, char const *argv[]) {
   cout << "p1 = " << *p1 << endl;
   cout << "p2 = " << *p2 << endl;
   cout << endl;
+
+  printf("PRINTF:  p1 = %d\n", *p1);
+
+
 
   //Example 2 - Assign a value to a memory location being pointed at by a pointer
   *p1 = 10;   // Assign the value 10 to the memory location that p1 is pointing to
@@ -97,6 +112,22 @@ int main(int argc, char const *argv[]) {
   cout << "Example 6 - What happened to firstvalue and secondvalue?" << endl;
   cout << "firstvalue is " << firstvalue << endl;
   cout << "secondvalue is " << secondvalue << endl;
+  cout << endl;
+
+  //Example 7 -
+  result = AddVariable(p1, p2); //
+  cout << "Example 7 - AddVaribles" << endl;
+  cout << "p1 = " << *p1 << endl;
+  cout << "p2 = " << *p2 << endl;
+  cout << "result = " << result << endl;
+  cout << endl;
+
+  //Example 8 -
+  result = AddVariable(&firstvalue, &secondvalue); //
+  cout << "Example 8 - AddVaribles" << endl;
+  cout << "firstvalue = " << firstvalue << endl;
+  cout << "secondvalue = " << secondvalue << endl;
+  cout << "result = " << result << endl;
   cout << endl;
 
   return 0;
